@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="180dp"
+    android:layout_gravity="center"
+    android:background="@drawable/round_white_drawable"
+    tools:context=".fragments.TimeInputFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/text_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginTop="@dimen/dp_25"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/black_stroke"
+            android:paddingVertical="10dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@id/hours"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
+
+        <LinearLayout
+            android:id="@+id/hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@drawable/drawer_ripple"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="3dp"
+            app:layout_constraintBottom_toTopOf="@id/ok"
+            app:layout_constraintEnd_toStartOf="@id/minutes_selector"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:id="@+id/h_temp"
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/round_circle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Hour"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@id/ok"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/minutes_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@drawable/drawer_ripple"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="3dp"
+            app:layout_constraintBottom_toTopOf="@id/ok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/hours">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="Minutes"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@id/ok"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/m_temp"
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/round_circle" />
+        </LinearLayout>
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/minutes"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Hour"-->
+        <!--            app:layout_constraintBottom_toTopOf="@id/ok"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            android:drawableStart="@drawable/round_circle"-->
+        <!--            android:textColor="@android:color/black" />-->
+
+        <TextView
+            android:id="@+id/ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawer_ripple_bottom_left"
+            android:paddingVertical="15dp"
+            android:text="CANCEL"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/cancel"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawer_ripple_bottom_right"
+            android:paddingVertical="15dp"
+            android:text="OK"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ok" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

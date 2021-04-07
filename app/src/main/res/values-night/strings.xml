@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WallPaperApp</string>
+    <string name="home">Home</string>
+    <string name="trending">Trending</string>
+    <string name="favorite">Favorite</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="walrex">WalRex</string>
+    <string name="view_all">View All</string>
+    <string name="navigation_drawer_open">Navigation Drawer Open</string>
+    <string name="navigation_drawer_close">Navigation Drawer Closed</string>
+    <string name="off">OFF</string>
+    <string name="on">ON</string>
+    <string name="related_wallpapers">Related Wallpapers</string>
+    <string name="dimensions">Dimensions</string>
+    <string name="size">Size</string>
+    <string name="downloads">Downloads</string>
+</resources>

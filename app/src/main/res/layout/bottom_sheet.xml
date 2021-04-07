@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/top_round_white"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="88dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <View
+        android:id="@+id/bottom_view"
+        android:layout_width="52dp"
+        android:layout_height="6dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/black_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/download"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/drawer_ripple"
+        android:padding="@dimen/dp_10"
+        android:src="@drawable/download"
+        app:layout_constraintEnd_toStartOf="@id/gallery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/gallery"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/drawer_ripple"
+        android:padding="@dimen/dp_10"
+        android:src="@drawable/set_wallpaper"
+        app:layout_constraintEnd_toStartOf="@id/favorite"
+        app:layout_constraintStart_toEndOf="@id/download"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/favorite"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/drawer_ripple"
+        android:padding="@dimen/dp_10"
+        android:src="@drawable/favorite_icon"
+        app:layout_constraintEnd_toStartOf="@id/share"
+        app:layout_constraintStart_toEndOf="@id/gallery"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/share"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/drawer_ripple"
+        android:padding="10dp"
+        android:src="@drawable/share_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/favorite"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/download_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:progressTint="@android:color/black"
+        android:secondaryProgress="100"
+        android:secondaryProgressTint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/share"
+        tools:progress="50" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tag_rec_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/download_progress" />
+
+    <RelativeLayout
+        android:id="@+id/temp_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/bottom_bck"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tag_rec_view">
+
+        <TextView
+            android:id="@+id/temp_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/temp_3"
+            android:layout_alignParentStart="true"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/downloads"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/downloads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/temp_1"
+            android:layout_alignStart="@id/temp_1"
+            android:layout_alignEnd="@id/temp_1"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            tools:text="693" />
+
+        <View
+            android:id="@+id/temp_3"
+            android:layout_width="3dp"
+            android:layout_height="62dp"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/white" />
+
+        <TextView
+            android:id="@+id/temp_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/temp_3"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/size"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/temp_1"
+            android:layout_alignStart="@id/temp_2"
+            android:layout_alignEnd="@id/temp_2"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            tools:text="3451 KB" />
+
+        <TextView
+            android:id="@+id/temp_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/temp_3"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/dimensions"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dimensions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/temp_4"
+            android:layout_alignStart="@id/temp_4"
+            android:layout_alignEnd="@id/temp_4"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            tools:text="1600 x 3000" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/temp_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/related_wallpapers"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temp_5" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/related_rec"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temp_6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
